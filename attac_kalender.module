@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the attac-Kalender feature.
+ */
+
+include_once 'attac_kalender.features.inc';
