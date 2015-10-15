@@ -13,15 +13,44 @@ function attac_kalender_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_adresse|node|ort|form';
+  $field_group->group_name = 'group_adresse';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'ort';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_horizontal';
+  $field_group->data = array(
+    'label' => 'Adresse',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_adresse',
+      1 => 'field_koordinaten',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-adresse field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_adresse|node|ort|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_bilder|node|news|form';
   $field_group->group_name = 'group_bilder';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'news';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_horizontal';
   $field_group->data = array(
     'label' => 'Bilder',
-    'weight' => '2',
+    'weight' => '4',
     'children' => array(
       0 => 'field_news_bild',
     ),
@@ -45,10 +74,10 @@ function attac_kalender_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'news';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_horizontal';
   $field_group->data = array(
     'label' => 'Dateien',
-    'weight' => '3',
+    'weight' => '5',
     'children' => array(
       0 => 'field_news_anhang',
     ),
@@ -126,19 +155,101 @@ function attac_kalender_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_infos|node|news|form';
-  $field_group->group_name = 'group_infos';
+  $field_group->identifier = 'group_horizontal|node|event_calendar|form';
+  $field_group->group_name = 'group_horizontal';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event_calendar';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Horizontal Tab',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_info',
+      1 => 'group_text',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-horizontal field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_horizontal|node|event_calendar|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_horizontal|node|news|form';
+  $field_group->group_name = 'group_horizontal';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'news';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
+    'label' => 'Horizontal Tab',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_text',
+      1 => 'group_bilder',
+      2 => 'group_infos',
+      3 => 'group_dateien',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-horizontal field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_horizontal|node|news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_horizontal|node|ort|form';
+  $field_group->group_name = 'group_horizontal';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'ort';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Horizontal Tab',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_inhalt',
+      1 => 'group_adresse',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-horizontal field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_horizontal|node|ort|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_infos|node|news|form';
+  $field_group->group_name = 'group_infos';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_horizontal';
+  $field_group->data = array(
     'label' => 'Infos',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_termin_wann',
       1 => 'field_termin_wo',
       2 => 'field_termin_was',
+      3 => 'og_group_ref',
+      4 => 'group_content_access',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -161,22 +272,57 @@ function attac_kalender_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'event_calendar';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_horizontal';
   $field_group->data = array(
     'label' => 'Info',
     'weight' => '2',
-    'children' => array(),
-    'format_type' => 'tab',
+    'children' => array(
+      0 => 'field_termin_wo',
+      1 => 'field_termin_wann',
+      2 => 'field_termin_was',
+      3 => 'og_group_ref',
+    ),
+    'format_type' => 'htab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => 'group-info field-group-tab',
         'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
   $export['group_info|node|event_calendar|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_inhalt|node|ort|form';
+  $field_group->group_name = 'group_inhalt';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'ort';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_horizontal';
+  $field_group->data = array(
+    'label' => 'Inhalt',
+    'weight' => '9',
+    'children' => array(
+      0 => 'body',
+      1 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-inhalt field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_inhalt|node|ort|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -356,21 +502,24 @@ function attac_kalender_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'event_calendar';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_horizontal';
   $field_group->data = array(
-    'label' => 'Text',
-    'weight' => '0',
+    'label' => 'Inhalt',
+    'weight' => '1',
     'children' => array(
-      0 => 'title',
+      0 => 'field_termin_beschreibung',
+      1 => 'title',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'htab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Inhalt',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-text field-group-tab',
         'required_fields' => 1,
+        'classes' => 'group-text field-group-tab',
+        'description' => '',
+        'id' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_text|node|event_calendar|form'] = $field_group;
@@ -383,10 +532,10 @@ function attac_kalender_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'news';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_horizontal';
   $field_group->data = array(
     'label' => 'Text',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'body',
       1 => 'field_untertitel',

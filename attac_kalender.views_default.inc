@@ -41,6 +41,9 @@ function attac_kalender_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Erweiterte Optionen',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
     ),
     'date_filter' => array(
       'bef_format' => 'bef_datepicker',
@@ -51,12 +54,32 @@ function attac_kalender_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
     ),
     'field_termin_was_tid' => array(
       'bef_format' => 'bef',
@@ -69,13 +92,37 @@ function attac_kalender_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'filtered_html';
@@ -93,56 +140,57 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
   $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|created';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
-  /* Feld: Inhalt: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Feld: Inhalt: Bild */
+  /* Field: Content: News Bild */
   $handler->display->display_options['fields']['field_news_bild']['id'] = 'field_news_bild';
   $handler->display->display_options['fields']['field_news_bild']['table'] = 'field_data_field_news_bild';
   $handler->display->display_options['fields']['field_news_bild']['field'] = 'field_news_bild';
   $handler->display->display_options['fields']['field_news_bild']['label'] = '';
   $handler->display->display_options['fields']['field_news_bild']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_bild']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_news_bild']['type'] = 'image';
   $handler->display->display_options['fields']['field_news_bild']['settings'] = array(
     'image_style' => 'thumbnail',
     'image_link' => 'content',
   );
-  $handler->display->display_options['fields']['field_news_bild']['delta_limit'] = 'all';
-  /* Feld: Inhalt: Body */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Sortierkriterien: Draggableviews: Gewichtung */
+  /* Sort criterion: Draggableviews: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'news:page_1';
   $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
-  /* Sortierkriterien: Inhalt: Beitragsdatum */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Typ */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Aktuelles */
   $handler = $view->new_display('page', 'Aktuelles', 'aktuelles');
@@ -153,6 +201,28 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'Nachrichten-Archiv';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
   $handler->display->display_options['path'] = 'news';
 
   /* Display: Reihenfolge */
@@ -206,33 +276,33 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Beitrags-ID */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Feld: Inhalt: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Feld: Inhalt: Bild */
+  /* Field: Content: News Bild */
   $handler->display->display_options['fields']['field_news_bild']['id'] = 'field_news_bild';
   $handler->display->display_options['fields']['field_news_bild']['table'] = 'field_data_field_news_bild';
   $handler->display->display_options['fields']['field_news_bild']['field'] = 'field_news_bild';
   $handler->display->display_options['fields']['field_news_bild']['label'] = '';
   $handler->display->display_options['fields']['field_news_bild']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_news_bild']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_news_bild']['type'] = 'image';
   $handler->display->display_options['fields']['field_news_bild']['settings'] = array(
     'image_style' => 'thumbnail',
     'image_link' => 'content',
   );
-  $handler->display->display_options['fields']['field_news_bild']['delta_limit'] = 'all';
-  /* Feld: Draggableviews: Inhalt */
+  /* Field: Draggableviews: Content */
   $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
   $handler->display->display_options['fields']['draggableviews']['table'] = 'node';
   $handler->display->display_options['fields']['draggableviews']['field'] = 'draggableviews';
@@ -268,21 +338,21 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Typ */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filterkriterium: Datum: Datum (node) */
+  /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -307,7 +377,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_termin_wann.field_termin_wann_value' => 'field_data_field_termin_wann.field_termin_wann_value',
   );
-  /* Filterkriterium: Inhalt: Was (field_termin_was) */
+  /* Filter criterion: Content: Was (field_termin_was) */
   $handler->display->display_options['filters']['field_termin_was_tid']['id'] = 'field_termin_was_tid';
   $handler->display->display_options['filters']['field_termin_was_tid']['table'] = 'field_data_field_termin_was';
   $handler->display->display_options['filters']['field_termin_was_tid']['field'] = 'field_termin_was_tid';
@@ -331,6 +401,60 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['filters']['field_termin_was_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_termin_was_tid']['vocabulary'] = 'terminart';
   $handler->display->display_options['path'] = 'news/archiv';
+
+  /* Display: AG News */
+  $handler = $view->new_display('page', 'AG News', 'ag_news');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['title'] = 'Aktuelles von %1';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['path'] = 'ags/%/aktuelles';
+
+  /* Display: AG News Panel */
+  $handler = $view->new_display('panel_pane', 'AG News Panel', 'panel_pane_1');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['title'] = 'Aktuelles von %1';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
+  $handler->display->display_options['arguments']['gid']['break_phrase'] = TRUE;
   $translatables['news'] = array(
     t('Master'),
     t('Aktuelles'),
@@ -340,7 +464,8 @@ function attac_kalender_views_default_views() {
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
+    t('Erweiterte Optionen'),
+    t('Select any filter and click on Apply to see results'),
     t('Reihenfolge'),
     t('Sortieren'),
     t('Nachrichtenarchiv'),
@@ -353,6 +478,13 @@ function attac_kalender_views_default_views() {
     t('letzte Seite »'),
     t('Wann'),
     t('Was'),
+    t('AG News'),
+    t('more'),
+    t('Alle'),
+    t('Aktuelles von %1'),
+    t('AG News Panel'),
+    t('All'),
+    t('View panes'),
   );
   $export['news'] = $view;
 
@@ -368,7 +500,7 @@ function attac_kalender_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = 'ALLE TERMINE';
   $handler->display->display_options['link_display'] = 'page_1';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -376,11 +508,6 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'month';
   $handler->display->display_options['style_plugin'] = 'calendar_style';
@@ -390,7 +517,15 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['style_options']['theme_style'] = '1';
   $handler->display->display_options['style_options']['max_items'] = '0';
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
-  /* Feld: Inhalt: Titel */
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  /* Relationship: OG membership: Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
+  $handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -402,7 +537,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Feld: Inhalt: Rendered Beitrag */
+  /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
@@ -413,7 +548,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'kalender_popup';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Feld: Colorbox: Colorbox trigger */
+  /* Field: Colorbox: Colorbox trigger */
   $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
@@ -425,7 +560,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
   $handler->display->display_options['fields']['colorbox']['width'] = '700px';
   $handler->display->display_options['fields']['colorbox']['height'] = '500px';
-  /* Feld: Inhalt: Wann */
+  /* Field: Content: Wann */
   $handler->display->display_options['fields']['field_termin_wann']['id'] = 'field_termin_wann';
   $handler->display->display_options['fields']['field_termin_wann']['table'] = 'field_data_field_termin_wann';
   $handler->display->display_options['fields']['field_termin_wann']['field'] = 'field_termin_wann';
@@ -442,18 +577,18 @@ function attac_kalender_views_default_views() {
   );
   $handler->display->display_options['fields']['field_termin_wann']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_termin_wann']['delta_offset'] = '0';
-  /* Feld: Inhalt: Was */
+  /* Field: Content: Was */
   $handler->display->display_options['fields']['field_termin_was']['id'] = 'field_termin_was';
   $handler->display->display_options['fields']['field_termin_was']['table'] = 'field_data_field_termin_was';
   $handler->display->display_options['fields']['field_termin_was']['field'] = 'field_termin_was';
   $handler->display->display_options['fields']['field_termin_was']['label'] = '';
   $handler->display->display_options['fields']['field_termin_was']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_termin_was']['type'] = 'taxonomy_term_reference_plain';
-  /* Sortierkriterien: Inhalt: Wann -  Startdatum (field_termin_wann) */
+  /* Sort criterion: Content: Wann -  start date (field_termin_wann) */
   $handler->display->display_options['sorts']['field_termin_wann_value']['id'] = 'field_termin_wann_value';
   $handler->display->display_options['sorts']['field_termin_wann_value']['table'] = 'field_data_field_termin_wann';
   $handler->display->display_options['sorts']['field_termin_wann_value']['field'] = 'field_termin_wann_value';
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -531,12 +666,11 @@ function attac_kalender_views_default_views() {
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Datum: Datum (node) */
+  /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
@@ -545,14 +679,14 @@ function attac_kalender_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Was (field_termin_was) */
+  /* Filter criterion: Content: Was (field_termin_was) */
   $handler->display->display_options['filters']['field_termin_was_tid']['id'] = 'field_termin_was_tid';
   $handler->display->display_options['filters']['field_termin_was_tid']['table'] = 'field_data_field_termin_was';
   $handler->display->display_options['filters']['field_termin_was_tid']['field'] = 'field_termin_was_tid';
@@ -570,6 +704,7 @@ function attac_kalender_views_default_views() {
     7 => 0,
     8 => 0,
     3 => 0,
+    9 => 0,
   );
   $handler->display->display_options['filters']['field_termin_was_tid']['group_info']['label'] = 'Was (field_termin_was)';
   $handler->display->display_options['filters']['field_termin_was_tid']['group_info']['identifier'] = 'field_termin_was_tid';
@@ -581,27 +716,7 @@ function attac_kalender_views_default_views() {
   );
   $handler->display->display_options['filters']['field_termin_was_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_termin_was_tid']['vocabulary'] = 'terminart';
-  /* Filterkriterium: Beschädigte/fehlende Behandlungsroutine */
-  $handler->display->display_options['filters']['field_termin_wer_tid']['id'] = 'field_termin_wer_tid';
-  $handler->display->display_options['filters']['field_termin_wer_tid']['table'] = 'field_data_field_termin_wer';
-  $handler->display->display_options['filters']['field_termin_wer_tid']['field'] = 'field_termin_wer_tid';
-  $handler->display->display_options['filters']['field_termin_wer_tid']['operator'] = 'or';
-  $handler->display->display_options['filters']['field_termin_wer_tid']['value'] = array();
-  $handler->display->display_options['filters']['field_termin_wer_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_termin_wer_tid']['expose']['operator_id'] = 'field_termin_wer_tid_op';
-  $handler->display->display_options['filters']['field_termin_wer_tid']['expose']['label'] = 'Wer';
-  $handler->display->display_options['filters']['field_termin_wer_tid']['expose']['operator'] = 'field_termin_wer_tid_op';
-  $handler->display->display_options['filters']['field_termin_wer_tid']['expose']['identifier'] = 'field_termin_wer_tid';
-  $handler->display->display_options['filters']['field_termin_wer_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-    3 => 0,
-  );
+  $handler->display->display_options['filters']['field_termin_was_tid']['error_message'] = FALSE;
   $handler->display->display_options['path'] = 'termine/monat';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Month';
@@ -631,12 +746,11 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Datum: Datum (node) */
+  /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'week';
@@ -670,12 +784,11 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Datum: Datum (node) */
+  /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
@@ -708,7 +821,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -717,7 +830,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Feld: Inhalt: Wann */
+  /* Field: Content: Wann */
   $handler->display->display_options['fields']['field_termin_wann']['id'] = 'field_termin_wann';
   $handler->display->display_options['fields']['field_termin_wann']['table'] = 'field_data_field_termin_wann';
   $handler->display->display_options['fields']['field_termin_wann']['field'] = 'field_termin_wann';
@@ -735,12 +848,11 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['field_termin_wann']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_termin_wann']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Datum: Datum (node) */
+  /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'year';
@@ -774,12 +886,11 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Datum: Datum (node) */
+  /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['date_argument']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
@@ -795,14 +906,14 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['row_options']['date_field'] = 'field_data_field_termin_wann.field_termin_wann_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Datum: Datum (node) */
+  /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -825,7 +936,7 @@ function attac_kalender_views_default_views() {
 
   /* Display: Upcoming */
   $handler = $view->new_display('block', 'Upcoming', 'block_2');
-  $handler->display->display_options['display_description'] = 'Block der zukünftigen Events.';
+  $handler->display->display_options['display_description'] = 'Upcoming events block';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -843,8 +954,9 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -855,7 +967,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Feld: Inhalt: Rendered Beitrag */
+  /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
@@ -866,7 +978,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'kalender_popup';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Feld: Colorbox: Colorbox trigger */
+  /* Field: Colorbox: Colorbox trigger */
   $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
@@ -877,7 +989,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
   $handler->display->display_options['fields']['colorbox']['width'] = '700px';
   $handler->display->display_options['fields']['colorbox']['height'] = '500px';
-  /* Feld: Inhalt: Wann */
+  /* Field: Content: Wann */
   $handler->display->display_options['fields']['field_termin_wann']['id'] = 'field_termin_wann';
   $handler->display->display_options['fields']['field_termin_wann']['table'] = 'field_data_field_termin_wann';
   $handler->display->display_options['fields']['field_termin_wann']['field'] = 'field_termin_wann';
@@ -894,7 +1006,7 @@ function attac_kalender_views_default_views() {
   );
   $handler->display->display_options['fields']['field_termin_wann']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_termin_wann']['delta_offset'] = '0';
-  /* Feld: Inhalt: Was */
+  /* Field: Content: Was */
   $handler->display->display_options['fields']['field_termin_was']['id'] = 'field_termin_was';
   $handler->display->display_options['fields']['field_termin_was']['table'] = 'field_data_field_termin_was';
   $handler->display->display_options['fields']['field_termin_was']['field'] = 'field_termin_was';
@@ -906,14 +1018,14 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['field_termin_was']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Datum: Datum (node) */
+  /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -926,7 +1038,7 @@ function attac_kalender_views_default_views() {
 
   /* Display: Nächster AG-Termin */
   $handler = $view->new_display('block', 'Nächster AG-Termin', 'block_3');
-  $handler->display->display_options['display_description'] = 'Block der zukünftigen Events.';
+  $handler->display->display_options['display_description'] = 'Upcoming events block';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -945,7 +1057,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -957,7 +1069,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Feld: Inhalt: Rendered Beitrag */
+  /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
@@ -968,7 +1080,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'kalender_popup';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
-  /* Feld: Colorbox: Colorbox trigger */
+  /* Field: Colorbox: Colorbox trigger */
   $handler->display->display_options['fields']['colorbox']['id'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['table'] = 'colorbox';
   $handler->display->display_options['fields']['colorbox']['field'] = 'colorbox';
@@ -980,7 +1092,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['colorbox']['gid'] = 1;
   $handler->display->display_options['fields']['colorbox']['width'] = '700px';
   $handler->display->display_options['fields']['colorbox']['height'] = '500px';
-  /* Feld: Inhalt: Wann */
+  /* Field: Content: Wann */
   $handler->display->display_options['fields']['field_termin_wann']['id'] = 'field_termin_wann';
   $handler->display->display_options['fields']['field_termin_wann']['table'] = 'field_data_field_termin_wann';
   $handler->display->display_options['fields']['field_termin_wann']['field'] = 'field_termin_wann';
@@ -997,7 +1109,7 @@ function attac_kalender_views_default_views() {
   );
   $handler->display->display_options['fields']['field_termin_wann']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_termin_wann']['delta_offset'] = '0';
-  /* Feld: Inhalt: Was */
+  /* Field: Content: Was */
   $handler->display->display_options['fields']['field_termin_was']['id'] = 'field_termin_was';
   $handler->display->display_options['fields']['field_termin_was']['table'] = 'field_data_field_termin_was';
   $handler->display->display_options['fields']['field_termin_was']['field'] = 'field_termin_was';
@@ -1006,7 +1118,7 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['fields']['field_termin_was']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_termin_was']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Inhalt: Besitzt eine Taxonomiebegriff-TID. */
+  /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -1026,14 +1138,14 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Datum: Datum (node) */
+  /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -1043,30 +1155,63 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_termin_wann.field_termin_wann_value' => 'field_data_field_termin_wann.field_termin_wann_value',
   );
+
+  /* Display: Panel Inhalt */
+  $handler = $view->new_display('panel_pane', 'Panel Inhalt', 'panel_pane_1');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: OG membership: Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node']['id'] = 'og_membership_related_node';
+  $handler->display->display_options['relationships']['og_membership_related_node']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node']['field'] = 'og_membership_related_node';
+  $handler->display->display_options['relationships']['og_membership_related_node']['label'] = 'AG';
+  $handler->display->display_options['relationships']['og_membership_related_node']['required'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_related_node';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['title'] = 'Nächste Termine der %1';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $translatables['termine'] = array(
     t('Master'),
     t('ALLE TERMINE'),
-    t('Anwenden'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('node from OG membership'),
+    t('Month'),
+    t('more'),
+    t('Filtern'),
     t('Zurücksetzen'),
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('Month'),
-    t('mehr'),
-    t('Filtern'),
-    t('Alle'),
+    t('All'),
     t('Was'),
     t('Was (field_termin_was)'),
-    t('Wer'),
     t('Week'),
     t('Day'),
     t('Year'),
     t('Block'),
     t('iCal'),
     t('Upcoming'),
-    t('Block der zukünftigen Events.'),
+    t('Upcoming events block'),
     t('Nächster AG-Termin'),
+    t('Alle'),
     t('Nächstes Treffen'),
+    t('Panel Inhalt'),
+    t('AG'),
+    t('Nächste Termine der %1'),
+    t('View panes'),
   );
   $export['termine'] = $view;
 

@@ -30,10 +30,10 @@ function attac_kalender_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Termine');
-
 
   return $menu_links;
 }

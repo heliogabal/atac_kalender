@@ -10,6 +10,12 @@
 function attac_kalender_user_default_roles() {
   $roles = array();
 
+  // Exported role: news.
+  $roles['news'] = array(
+    'name' => 'news',
+    'weight' => 4,
+  );
+
   // Exported role: termine.
   $roles['termine'] = array(
     'name' => 'termine',
