@@ -49,6 +49,9 @@ function attac_kalender_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'adresse' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -113,10 +116,13 @@ function attac_kalender_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '2',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '1',
+        ),
+        'flag' => array(
+          'weight' => '11',
         ),
       ),
       'display' => array(),
@@ -162,6 +168,9 @@ function attac_kalender_strongarm() {
       ),
       'plenum_startseite' => array(
         'custom_settings' => FALSE,
+      ),
+      'adresse' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
@@ -272,6 +281,7 @@ function attac_kalender_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_event_calendar'] = $strongarm;
 
@@ -353,6 +363,27 @@ function attac_kalender_strongarm() {
   $strongarm->name = 'node_submitted_termin';
   $strongarm->value = 0;
   $export['node_submitted_termin'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_news_pattern';
+  $strongarm->value = 'news/[node:title]';
+  $export['pathauto_node_news_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ort_pattern';
+  $strongarm->value = 'orte/[node:title]';
+  $export['pathauto_node_ort_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_terminart_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_terminart_pattern'] = $strongarm;
 
   return $export;
 }

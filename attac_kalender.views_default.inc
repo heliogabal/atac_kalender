@@ -446,8 +446,6 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['title'] = 'Aktuelles von %1';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
@@ -455,6 +453,16 @@ function attac_kalender_views_default_views() {
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
   $handler->display->display_options['arguments']['gid']['break_phrase'] = TRUE;
+  $handler->display->display_options['argument_input'] = array(
+    'gid' => array(
+      'type' => 'none',
+      'context' => 'entity:node.group_group',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'OG Mitgliedschaft: Gruppen-ID',
+    ),
+  );
   $translatables['news'] = array(
     t('Master'),
     t('Aktuelles'),

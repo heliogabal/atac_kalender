@@ -34,9 +34,9 @@ function attac_kalender_node_info() {
     'event_calendar' => array(
       'name' => t('Termin'),
       'base' => 'node_content',
-      'description' => t('Termine werden im Kalender und auf der Startseite angezeigt.'),
+      'description' => t('Termine werden im Kalender, auf den AG-Seiten und auf der Startseite angezeigt.'),
       'has_title' => '1',
-      'title_label' => t('Event Title'),
+      'title_label' => t('Termin Titel'),
       'help' => '',
     ),
     'news' => array(
@@ -44,7 +44,7 @@ function attac_kalender_node_info() {
       'base' => 'node_content',
       'description' => t('News erscheinen als Aktuelle Ankündigungen auf der Startseite.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'ort' => array(

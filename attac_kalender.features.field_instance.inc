@@ -10,7 +10,7 @@
 function attac_kalender_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-event_calendar-field_termin_beschreibung'
+  // Exported field_instance: 'node-event_calendar-field_termin_beschreibung'.
   $field_instances['node-event_calendar-field_termin_beschreibung'] = array(
     'bundle' => 'event_calendar',
     'default_value' => NULL,
@@ -18,11 +18,11 @@ function attac_kalender_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -57,7 +57,7 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-field_termin_wann'
+  // Exported field_instance: 'node-event_calendar-field_termin_wann'.
   $field_instances['node-event_calendar-field_termin_wann'] = array(
     'bundle' => 'event_calendar',
     'deleted' => 0,
@@ -76,7 +76,7 @@ function attac_kalender_field_default_field_instances() {
           'show_repeat_rule' => 'hide',
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -116,7 +116,7 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-field_termin_was'
+  // Exported field_instance: 'node-event_calendar-field_termin_was'.
   $field_instances['node-event_calendar-field_termin_was'] = array(
     'bundle' => 'event_calendar',
     'default_value' => NULL,
@@ -128,7 +128,7 @@ function attac_kalender_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -154,7 +154,7 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-field_termin_wo'
+  // Exported field_instance: 'node-event_calendar-field_termin_wo'.
   $field_instances['node-event_calendar-field_termin_wo'] = array(
     'bundle' => 'event_calendar',
     'default_value' => NULL,
@@ -163,13 +163,14 @@ function attac_kalender_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => 1,
+          'links' => 0,
+          'view_mode' => 'adresse',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 0,
+        'type' => 'entityreference_entity_view',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -208,7 +209,51 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-group_content_access'
+  // Exported field_instance: 'node-event_calendar-field_themen'.
+  $field_instances['node-event_calendar-field_themen'] = array(
+    'bundle' => 'event_calendar',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_themen',
+    'label' => 'Themen',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'not_found_message' => 'The term \'@term\' will be added.',
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 40,
+    ),
+  );
+
+  // Exported field_instance: 'node-event_calendar-group_content_access'.
   $field_instances['node-event_calendar-group_content_access'] = array(
     'bundle' => 'event_calendar',
     'default_value' => array(
@@ -221,10 +266,9 @@ function attac_kalender_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 5,
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -259,7 +303,7 @@ function attac_kalender_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-event_calendar-og_group_ref'
+  // Exported field_instance: 'node-event_calendar-og_group_ref'.
   $field_instances['node-event_calendar-og_group_ref'] = array(
     'bundle' => 'event_calendar',
     'default_value' => NULL,
@@ -269,10 +313,9 @@ function attac_kalender_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -333,7 +376,7 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-body'
+  // Exported field_instance: 'node-news-body'.
   $field_instances['node-news-body'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -392,24 +435,28 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_news_anhang'
+  // Exported field_instance: 'node-news-field_news_anhang'.
   $field_instances['node-news-field_news_anhang'] = array(
     'bundle' => 'news',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 5,
+        'label' => 'above',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'title',
+        'weight' => 17,
       ),
       'kalender_popup' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -424,41 +471,29 @@ function attac_kalender_field_default_field_instances() {
     'label' => 'Anhang',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
-      'file_directory' => 'news',
-      'file_extensions' => 'svg txt doc docx rtf xls xlsx pdf ppt pptx pps ppsx odt ods odp',
-      'max_filesize' => '',
+      'allow_override' => 0,
+      'referencable_types' => array(
+        'audio' => 0,
+        'file' => 'file',
+        'image' => 0,
+        'text' => 0,
+        'twitter' => 0,
+        'video' => 0,
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'atom_reference',
       'settings' => array(
-        'allowed_schemes' => array(
-          'private' => 0,
-          'public' => 'public',
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 'document',
-          'image' => 0,
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'media_internet' => 'media_internet',
-          'upload' => 'upload',
-          'youtube' => 0,
-        ),
+        'context' => 'file_representation',
       ),
-      'type' => 'media_generic',
-      'weight' => 6,
+      'type' => 'atom_reference_textfield',
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-news-field_news_bild'
+  // Exported field_instance: 'node-news-field_news_bild'.
   $field_instances['node-news-field_news_bild'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -520,7 +555,7 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_termin_wann'
+  // Exported field_instance: 'node-news-field_termin_wann'.
   $field_instances['node-news-field_termin_wann'] = array(
     'bundle' => 'news',
     'deleted' => 0,
@@ -602,7 +637,7 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_termin_was'
+  // Exported field_instance: 'node-news-field_termin_was'.
   $field_instances['node-news-field_termin_was'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -648,7 +683,7 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_termin_wo'
+  // Exported field_instance: 'node-news-field_termin_wo'.
   $field_instances['node-news-field_termin_wo'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -710,7 +745,58 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_untertitel'
+  // Exported field_instance: 'node-news-field_themen'.
+  $field_instances['node-news-field_themen'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 18,
+      ),
+      'kalender_popup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_themen',
+    'label' => 'Themen',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'not_found_message' => 'The term \'@term\' will be added.',
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_untertitel'.
   $field_instances['node-news-field_untertitel'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
@@ -766,7 +852,7 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-group_content_access'
+  // Exported field_instance: 'node-news-group_content_access'.
   $field_instances['node-news-group_content_access'] = array(
     'bundle' => 'news',
     'default_value' => array(
@@ -817,15 +903,16 @@ function attac_kalender_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'widget_type' => 'options_select',
   );
 
-  // Exported field_instance: 'node-news-og_group_ref'
+  // Exported field_instance: 'node-news-og_group_ref'.
   $field_instances['node-news-og_group_ref'] = array(
     'bundle' => 'news',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -848,20 +935,33 @@ function attac_kalender_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
-    'label' => 'Mitgliedern folgender Gruppen',
-    'required' => FALSE,
+    'label' => 'AG',
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
+          'access_override' => 1,
           'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
+            'widget_type' => 'options_select',
           ),
           'default' => array(
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,
@@ -879,6 +979,7 @@ function attac_kalender_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
@@ -886,13 +987,19 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ort-body'
+  // Exported field_instance: 'node-ort-body'.
   $field_instances['node-ort-body'] = array(
     'bundle' => 'ort',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'adresse' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -902,12 +1009,9 @@ function attac_kalender_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -935,13 +1039,25 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ort-field_adresse'
+  // Exported field_instance: 'node-ort-field_adresse'.
   $field_instances['node-ort-field_adresse'] = array(
     'bundle' => 'ort',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'adresse' => array(
+        'label' => 'hidden',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            'address' => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'addressfield',
@@ -958,7 +1074,7 @@ function attac_kalender_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -991,12 +1107,18 @@ function attac_kalender_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ort-field_koordinaten'
+  // Exported field_instance: 'node-ort-field_koordinaten'.
   $field_instances['node-ort-field_koordinaten'] = array(
     'bundle' => 'ort',
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'adresse' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'leaflet',
@@ -1053,9 +1175,59 @@ function attac_kalender_field_default_field_instances() {
         'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'leaflet',
+        'settings' => array(
+          'height' => 400,
+          'icon' => array(
+            'html' => '',
+            'htmlClass' => '',
+            'iconAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'iconImageStyle' => '',
+            'iconSize' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'iconType' => 'marker',
+            'iconUrl' => '',
+            'popupAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'shadowAnchor' => array(
+              'x' => '',
+              'y' => '',
+            ),
+            'shadowUrl' => '',
+          ),
+          'leaflet_map' => 'leaflet-mapbox',
+          'popup' => array(
+            'show' => 1,
+            'text' => '[title]',
+          ),
+          'vector_display' => array(
+            'clickable' => 0,
+            'color' => '',
+            'dashArray' => '',
+            'fill' => 0,
+            'fillColor' => '',
+            'fillOpacity' => '',
+            'opacity' => '',
+            'stroke' => 0,
+            'stroke_override' => 0,
+            'weight' => '',
+          ),
+          'zoom' => array(
+            'initialZoom' => -1,
+            'maxZoom' => -1,
+            'minZoom' => 14,
+            'scrollWheelZoom' => 0,
+          ),
+        ),
+        'type' => 'geofield_leaflet',
         'weight' => 0,
       ),
     ),
@@ -1099,9 +1271,9 @@ function attac_kalender_field_default_field_instances() {
   t('Beschreibung');
   t('Body');
   t('Koordinaten');
-  t('Mitgliedern folgender Gruppen');
   t('News Bild');
   t('Sichtbarkeit in Gruppen');
+  t('Themen');
   t('Untertitel');
   t('Wann');
   t('Was');

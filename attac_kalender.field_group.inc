@@ -250,6 +250,8 @@ function attac_kalender_field_group_info() {
       2 => 'field_termin_was',
       3 => 'og_group_ref',
       4 => 'group_content_access',
+      5 => 'field_themen',
+      6 => 'flag',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -281,6 +283,7 @@ function attac_kalender_field_group_info() {
       1 => 'field_termin_wann',
       2 => 'field_termin_was',
       3 => 'og_group_ref',
+      4 => 'field_themen',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

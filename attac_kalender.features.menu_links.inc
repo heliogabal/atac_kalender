@@ -10,7 +10,7 @@
 function attac_kalender_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_termine:termine
+  // Exported menu link: main-menu_termine:termine.
   $menu_links['main-menu_termine:termine'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'termine',

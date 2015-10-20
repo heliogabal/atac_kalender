@@ -10,7 +10,7 @@
 function attac_kalender_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_adresse'
+  // Exported field_base: 'field_adresse'.
   $field_bases['field_adresse'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -46,7 +46,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_koordinaten'
+  // Exported field_base: 'field_koordinaten'.
   $field_bases['field_koordinaten'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -96,7 +96,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'geofield',
   );
 
-  // Exported field_base: 'field_news_anhang'
+  // Exported field_base: 'field_news_anhang'.
   $field_bases['field_news_anhang'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -104,22 +104,18 @@ function attac_kalender_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_news_anhang',
     'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
+      'sid' => array(
+        0 => 'sid',
       ),
     ),
     'locked' => 0,
-    'module' => 'file',
-    'settings' => array(
-      'display_default' => 0,
-      'display_field' => 0,
-      'uri_scheme' => 'public',
-    ),
+    'module' => 'atom_reference',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'file',
+    'type' => 'atom_reference',
   );
 
-  // Exported field_base: 'field_news_bild'
+  // Exported field_base: 'field_news_bild'.
   $field_bases['field_news_bild'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -138,7 +134,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'atom_reference',
   );
 
-  // Exported field_base: 'field_termin_beschreibung'
+  // Exported field_base: 'field_termin_beschreibung'.
   $field_bases['field_termin_beschreibung'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -157,7 +153,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_termin_wann'
+  // Exported field_base: 'field_termin_wann'.
   $field_bases['field_termin_wann'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -187,7 +183,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_termin_was'
+  // Exported field_base: 'field_termin_was'.
   $field_bases['field_termin_was'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -213,7 +209,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_termin_wo'
+  // Exported field_base: 'field_termin_wo'.
   $field_bases['field_termin_wo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -248,7 +244,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_untertitel'
+  // Exported field_base: 'field_untertitel'.
   $field_bases['field_untertitel'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -269,7 +265,7 @@ function attac_kalender_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'group_group'
+  // Exported field_base: 'group_group'.
   $field_bases['group_group'] = array(
     'active' => 1,
     'cardinality' => 1,
