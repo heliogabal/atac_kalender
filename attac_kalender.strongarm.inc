@@ -440,23 +440,9 @@ function attac_kalender_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_arbeitsgruppen_pattern';
-  $strongarm->value = '';
-  $export['pathauto_taxonomy_term_arbeitsgruppen_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_terminart_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_terminart_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_themen_pattern';
-  $strongarm->value = '';
-  $export['pathauto_taxonomy_term_themen_pattern'] = $strongarm;
 
   return $export;
 }

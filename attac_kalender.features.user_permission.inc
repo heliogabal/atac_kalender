@@ -110,13 +110,6 @@ function attac_kalender_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in themen'.
-  $permissions['delete terms in themen'] = array(
-    'name' => 'delete terms in themen',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'edit any event_calendar content'.
   $permissions['edit any event_calendar content'] = array(
     'name' => 'edit any event_calendar content',
@@ -183,13 +176,6 @@ function attac_kalender_user_default_permissions() {
     'roles' => array(
       'editor' => 'editor',
     ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in themen'.
-  $permissions['edit terms in themen'] = array(
-    'name' => 'edit terms in themen',
-    'roles' => array(),
     'module' => 'taxonomy',
   );
 
