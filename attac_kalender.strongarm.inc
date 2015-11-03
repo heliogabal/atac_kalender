@@ -17,7 +17,7 @@ function attac_kalender_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -26,7 +26,7 @@ function attac_kalender_strongarm() {
         'custom_settings' => FALSE,
       ),
       'ical' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -41,7 +41,7 @@ function attac_kalender_strongarm() {
         'custom_settings' => FALSE,
       ),
       'kalender_popup' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'plenum_startseite' => array(
         'custom_settings' => FALSE,
@@ -50,6 +50,9 @@ function attac_kalender_strongarm() {
         'custom_settings' => FALSE,
       ),
       'adresse' => array(
+        'custom_settings' => FALSE,
+      ),
+      'colorbox' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -92,7 +95,7 @@ function attac_kalender_strongarm() {
         'custom_settings' => FALSE,
       ),
       'ical' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'ag_artikel_startseite' => array(
         'custom_settings' => FALSE,
@@ -109,6 +112,12 @@ function attac_kalender_strongarm() {
       'kalender_popup' => array(
         'custom_settings' => TRUE,
       ),
+      'adresse' => array(
+        'custom_settings' => FALSE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -124,8 +133,48 @@ function attac_kalender_strongarm() {
         'flag' => array(
           'weight' => '11',
         ),
+        'twitter' => array(
+          'weight' => '1',
+        ),
       ),
-      'display' => array(),
+      'display' => array(
+        'flag_facebook_artikel' => array(
+          'default' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+          'kalender_popup' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'ical' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
+        ),
+        'flag_frontpage_artikel' => array(
+          'default' => array(
+            'weight' => '17',
+            'visible' => FALSE,
+          ),
+          'kalender_popup' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'ical' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__news'] = $strongarm;
@@ -171,6 +220,9 @@ function attac_kalender_strongarm() {
       ),
       'adresse' => array(
         'custom_settings' => TRUE,
+      ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
@@ -367,6 +419,13 @@ function attac_kalender_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_event_calendar_pattern';
+  $strongarm->value = 'termine/[node:field-plenum-wann:custom:mm]/[node:field-plenum-wann:custom:yyyy]/[title-raw]';
+  $export['pathauto_node_event_calendar_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_news_pattern';
   $strongarm->value = 'news/[node:title]';
   $export['pathauto_node_news_pattern'] = $strongarm;
@@ -381,9 +440,23 @@ function attac_kalender_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_arbeitsgruppen_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_arbeitsgruppen_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_terminart_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_terminart_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_themen_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_themen_pattern'] = $strongarm;
 
   return $export;
 }

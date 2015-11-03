@@ -16,6 +16,7 @@ function attac_kalender_user_default_permissions() {
     'roles' => array(
       'ag' => 'ag',
       'editor' => 'editor',
+      'termine' => 'termine',
     ),
     'module' => 'node',
   );
@@ -26,6 +27,7 @@ function attac_kalender_user_default_permissions() {
     'roles' => array(
       'ag' => 'ag',
       'editor' => 'editor',
+      'news' => 'news',
     ),
     'module' => 'node',
   );
@@ -43,7 +45,9 @@ function attac_kalender_user_default_permissions() {
   // Exported permission: 'delete any event_calendar content'.
   $permissions['delete any event_calendar content'] = array(
     'name' => 'delete any event_calendar content',
-    'roles' => array(),
+    'roles' => array(
+      'termine' => 'termine',
+    ),
     'module' => 'node',
   );
 
@@ -51,7 +55,7 @@ function attac_kalender_user_default_permissions() {
   $permissions['delete any news content'] = array(
     'name' => 'delete any news content',
     'roles' => array(
-      'editor' => 'editor',
+      'news' => 'news',
     ),
     'module' => 'node',
   );
@@ -59,7 +63,9 @@ function attac_kalender_user_default_permissions() {
   // Exported permission: 'delete any ort content'.
   $permissions['delete any ort content'] = array(
     'name' => 'delete any ort content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -69,6 +75,7 @@ function attac_kalender_user_default_permissions() {
     'roles' => array(
       'ag' => 'ag',
       'editor' => 'editor',
+      'termine' => 'termine',
     ),
     'module' => 'node',
   );
@@ -79,6 +86,7 @@ function attac_kalender_user_default_permissions() {
     'roles' => array(
       'ag' => 'ag',
       'editor' => 'editor',
+      'news' => 'news',
     ),
     'module' => 'node',
   );
@@ -112,7 +120,9 @@ function attac_kalender_user_default_permissions() {
   // Exported permission: 'edit any event_calendar content'.
   $permissions['edit any event_calendar content'] = array(
     'name' => 'edit any event_calendar content',
-    'roles' => array(),
+    'roles' => array(
+      'termine' => 'termine',
+    ),
     'module' => 'node',
   );
 
@@ -120,7 +130,7 @@ function attac_kalender_user_default_permissions() {
   $permissions['edit any news content'] = array(
     'name' => 'edit any news content',
     'roles' => array(
-      'editor' => 'editor',
+      'news' => 'news',
     ),
     'module' => 'node',
   );
@@ -141,6 +151,7 @@ function attac_kalender_user_default_permissions() {
     'roles' => array(
       'ag' => 'ag',
       'editor' => 'editor',
+      'termine' => 'termine',
     ),
     'module' => 'node',
   );
@@ -151,6 +162,7 @@ function attac_kalender_user_default_permissions() {
     'roles' => array(
       'ag' => 'ag',
       'editor' => 'editor',
+      'news' => 'news',
     ),
     'module' => 'node',
   );

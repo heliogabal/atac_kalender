@@ -342,6 +342,7 @@ function attac_kalender_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_news_bild',
+      2 => 'field_news_anhang',
     ),
     'format_type' => 'html5',
     'format_settings' => array(
